@@ -32,25 +32,16 @@ export function HeroSection() {
       </AnimatePresence>
 
       {/* Overlay gradient so text is readable while keeping video visible */}
-      <div className='absolute inset-0 bg-gradient-to-b from-mc-void/60 via-transparent to-mc-void/90' />
+      <div className='absolute inset-0 backdrop-blur-[3px]' />
+      <div className='absolute inset-0 bg-gradient-to-b from-mc-void/60 via-transparent to-mc-void/50' />
       <div className='absolute inset-0 bg-mc-void/30 mix-blend-multiply' />
+      
+      {/* Smooth transition gradient to About section */}
+      <div className='absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d0500] to-transparent pointer-events-none' />
 
       {/* Content */}
       <div className='relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center mt-16 w-full'>
         
-        {/* Badge */}
-        <motion.div
-          className='flex items-center gap-2 px-5 py-2 rounded-full border border-mc-gold/40 bg-mc-void/60 backdrop-blur-sm mb-6 shadow-xl'
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <svg className="w-4 h-4 text-mc-gold" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-          </svg>
-          <span className='font-pixel text-mc-gold text-[10px] sm:text-xs tracking-[0.2em]'>MINECRAFT DEVELOPER</span>
-        </motion.div>
-
         {/* Main Title */}
         <motion.h1
           className='font-pixel text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none mb-6 tracking-[0.05em]'
