@@ -1,19 +1,9 @@
 [
-  {
-    "id": "azka-topup",
-    "title": "AZKA TOP UP",
-    "description": "Platform top up game berbasis web dengan sistem pembayaran otomatis.",
-    "tags": ["Next.js", "Laravel", "Tailwind"],
-    "category": "web",
-    "url": "",
-    "github": "",
-    "image": "/assets/Projects/image.png"
-  },
-  {
+    {
     "id": "flowtask",
     "title": "Vorxa",
-    "description": "Aplikasi manajemen tugas dan produktivitas dengan UI yang bersih.",
-    "tags": ["Next.js", "TypeScript", "Supabase"],
+    "description": "Aplikasi produktivitas dengan task management, focus timer, dan analytics semua dalam satu tempat.",
+    "tags": ["Kotlin", "Supabase"],
     "category": "web",
     "url": "",
     "github": "",
@@ -26,23 +16,33 @@
     "mockup": "mobile"
   },
   {
-    "id": "sigizi",
-    "title": "SIGIZI",
-    "description": "Sistem informasi gizi berbasis web untuk monitoring nutrisi.",
-    "tags": ["Laravel", "MySQL", "Tailwind"],
+    "id": "azka-topup",
+    "title": "AZKA TOP UP",
+    "description": "Manajemen Pendaftaran & Penilaian Sistem lomba end-to-end: dari pendaftaran peserta sampai penilaian juri.",
+    "tags": ["Next.js", "Laravel", "Tailwind"],
     "category": "web",
     "url": "",
     "github": "",
-    "image": "/assets/images/image.png"
+    "image": "/assets/Projects/image.png"
   },
-  {
-    "id": "project-4",
-    "title": "Project Placeholder",
-    "description": "Deskripsi project akan diupdate.",
-    "tags": ["Next.js", "TypeScript"],
-    "category": "other",
+   {
+    "id": "portal-lomba",
+    "title": "Manajemen Pendaftaran & Penilaian ",
+    "description": "Digitalisasi penyelenggaraan lomba — eliminasi proses manual dari awal sampai akhir.",
+    "tags": ["Laravel", "TypeScript", "Supabase"],
+    "category": "web",
     "url": "",
     "github": "",
-    "image": "/assets/images/image.png"
+    "image": "/assets/Projects/penilaian.png"
+  },
+  {
+    "id": "azkatravel",
+    "title": "Azkatravel",
+    "description": "Temukan destinasi, bandingkan paket wisata, dan selesaikan pembayaran dalam satu platform.",
+    "tags": ["Next.js", "TypeScript", "Supabase"],
+    "category": "web",
+    "url": "",
+    "github": "",
+    "image": "/assets/projects/azkatravel.png"
   }
 ]

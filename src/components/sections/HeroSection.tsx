@@ -99,12 +99,14 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <motion.p
-          className='text-mc-white/90 text-base md:text-xl mb-4 font-medium max-w-2xl'
+          className='font-pixel text-mc-gray/80 text-sm md:text-base mb-6 max-w-2xl flex flex-wrap justify-center gap-1 md:gap-4 tracking-widest uppercase'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          Crafting Digital Experiences in the Minecraft Universe
+          <span>Design it.</span>
+          <span>Build it.</span>
+          <span>Ship it.</span>
         </motion.p>
 
         {/* Typewriter text */}
