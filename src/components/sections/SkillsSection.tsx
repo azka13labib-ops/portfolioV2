@@ -54,7 +54,7 @@ export function SkillsSection() {
   const expLabel = `${expYears === 1 ? 'YEAR' : 'YEARS'} EXPERIENCE`
 
   return (
-    <SectionWrapper id='skills'>
+    <SectionWrapper id='skills' className='bg-mc-obsidian'>
       <div className='grid lg:grid-cols-[1fr_2fr] gap-12 max-w-[1200px] mx-auto px-6 md:px-12 py-24'>
         
         {/* Left column */}

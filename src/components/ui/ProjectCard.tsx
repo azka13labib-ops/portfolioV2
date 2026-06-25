@@ -19,7 +19,7 @@ function MobileShowcase({ src, images, alt, className }: { src: string; images?:
   const rightImg = images && images.length >= 3 ? images[2] : src
 
   return (
-    <div className={cn('relative flex items-center justify-center w-full h-full bg-[#0a0a0a] overflow-hidden group perspective-1000', className)}>
+    <div className={cn('relative flex items-center justify-center w-full h-full bg-mc-void overflow-hidden group perspective-1000', className)}>
       {/* Background glow (uses center image) */}
       <div className='absolute inset-0 opacity-20'>
         <img src={centerImg} alt="" className='w-full h-full object-cover blur-3xl scale-150' />

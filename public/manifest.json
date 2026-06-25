@@ -1,0 +1,16 @@
+{
+  "name": "Azka Labib Portfolio",
+  "short_name": "Azka Labib",
+  "description": "Fullstack Developer spesialis Next.js, Laravel, dan Kotlin.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ff6600",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { FaGithub, FaDiscord, FaInstagram } from 'react-icons/fa'
-
+import Image from 'next/image'
 
 const SERVICES = [
   { icon: '', label: 'Web Development', desc: 'Full stack web app & platform' },
@@ -24,7 +24,7 @@ const fadeUp = {
 
 export function AboutSection() {
   return (
-    <SectionWrapper id='about' className='bg-gradient-to-b from-[#150500] to-transparent'>
+    <SectionWrapper id='about' className='bg-linear-to-b from-[#150500] to-transparent'>
       <SectionTitle title='About Me' subtitle='The developer behind the keyboard' />
 
       {/* Main layout: foto kiri + konten kanan */}
@@ -44,10 +44,11 @@ export function AboutSection() {
             <div className='absolute inset-0 rounded-full ring-4 ring-mc-lava/40 blur-md' />
             <div className='relative w-full h-full rounded-full overflow-hidden border-4 border-mc-lava shadow-[0_0_30px_rgba(255,102,0,0.3)] bg-mc-stone'>
               {/* TODO: ganti src dengan path foto kamu */}
-              <img
+              <Image
                 src='/assets/images/image.png'
                 alt='Azka Labib'
-                className='w-full h-full object-cover object-[65%_center] brightness-110 contrast-105'
+                fill
+                className='object-cover object-[65%_center] brightness-110 contrast-105'
               />
             </div>
             {/* Available badge */}
@@ -59,13 +60,13 @@ export function AboutSection() {
 
           {/* Social Links */}
           <div className='flex items-center gap-5 mt-4'>
-            <a href='https://github.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-white hover:-translate-y-1 transition-all duration-200'>
+            <a href='https://github.com/azka13labib-ops' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-white hover:-translate-y-1 transition-all duration-200'>
               <FaGithub className='w-6 h-6' />
             </a>
-            <a href='https://discord.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#5865F2] hover:-translate-y-1 transition-all duration-200'>
+            <a href='https://discord.com/users/azkaaa6169' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#5865F2] hover:-translate-y-1 transition-all duration-200'>
               <FaDiscord className='w-6 h-6' />
             </a>
-            <a href='https://instagram.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-200'>
+            <a href='https://instagram.com/askagantengbgttt' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-200'>
               <FaInstagram className='w-6 h-6' />
             </a>
           </div>
