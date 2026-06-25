@@ -1,114 +1,117 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { SectionTitle } from '@/components/ui/SectionTitle'
+import { FaGithub, FaDiscord, FaInstagram } from 'react-icons/fa'
+
 
 const SERVICES = [
-  {
-    title: 'Plugin Development',
-    icon: (
-      <svg className="w-5 h-5 text-mc-lava" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-    ),
-  },
-  {
-    title: 'Web Development',
-    icon: (
-      <svg className="w-5 h-5 text-mc-lava" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-    ),
-  },
-  {
-    title: 'Server Management',
-    icon: (
-      <svg className="w-5 h-5 text-mc-lava" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-    ),
-  },
-  {
-    title: 'Performance Tuning',
-    icon: (
-      <svg className="w-5 h-5 text-mc-lava" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-    ),
-  }
+  { icon: '', label: 'Web Development', desc: 'Full stack web app & platform' },
+  { icon: '', label: 'Mobile Development', desc: 'Android app dengan Kotlin & Flutter' },
+  { icon: '', label: 'Backend Engineering', desc: ' API, database & server architecture ' },
+  { icon: '', label: 'UI/UX Implementation', desc: 'Translate design ke code yang pixel-perfect' },
 ]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.4 },
+  }),
+}
 
 export function AboutSection() {
   return (
-    <SectionWrapper id='about' className='bg-[#0d0500] relative overflow-hidden py-24'>
-      <div className='max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center'>
-        
-        {/* Left: Image & Decoration */}
+    <SectionWrapper id='about' className='bg-gradient-to-b from-[#150500] to-transparent'>
+      <SectionTitle title='About Me' subtitle='The developer behind the keyboard' />
+
+      {/* Main layout: foto kiri + konten kanan */}
+      <div className='max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 md:gap-16 items-start'>
+
+        {/* Kolom kiri — foto + mini stats */}
         <motion.div
-          className='relative flex justify-center items-center'
-          initial={{ opacity: 0, x: -30 }}
+          className='flex flex-col items-center gap-6'
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
-          {/* Decorative rotated border */}
-          <div className='absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] border border-mc-lava/30 rounded-[40px] rotate-12 -z-10' />
-          
-          {/* Glowing Image Container */}
-          <div className='relative w-[250px] h-[250px] md:w-[320px] md:h-[320px] rounded-full p-1 bg-gradient-to-br from-mc-lava to-[#2a1100] shadow-[0_0_60px_rgba(255,102,0,0.3)]'>
-            <div className='w-full h-full rounded-full bg-[#1f1005] overflow-hidden flex items-center justify-center border-[4px] border-[#0d0500] relative'>
-              <Image src='/assets/images/image.png' alt='Azka Labib Profile' fill className='object-cover object-[70%_40%]' />
-              <div className='absolute inset-0 opacity-10 bg-gradient-to-t from-mc-lava/50 to-transparent pointer-events-none'></div>
+          {/* Avatar */}
+          <div className='relative w-56 h-56 md:w-64 md:h-64'>
+            {/* Glow ring */}
+            <div className='absolute inset-0 rounded-full ring-4 ring-mc-lava/40 blur-md' />
+            <div className='relative w-full h-full rounded-full overflow-hidden border-4 border-mc-lava shadow-[0_0_30px_rgba(255,102,0,0.3)] bg-mc-stone'>
+              {/* TODO: ganti src dengan path foto kamu */}
+              <img
+                src='/assets/images/image.png'
+                alt='Azka Labib'
+                className='w-full h-full object-cover object-[65%_center] brightness-110 contrast-105'
+              />
+            </div>
+            {/* Available badge */}
+            <div className='absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-pixel text-[10px] bg-mc-grass text-white px-3 py-1 border border-white/20 shadow-md flex items-center gap-1.5'>
+              <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+              Available for work
             </div>
           </div>
+
+          {/* Social Links */}
+          <div className='flex items-center gap-5 mt-4'>
+            <a href='https://github.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-white hover:-translate-y-1 transition-all duration-200'>
+              <FaGithub className='w-6 h-6' />
+            </a>
+            <a href='https://discord.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#5865F2] hover:-translate-y-1 transition-all duration-200'>
+              <FaDiscord className='w-6 h-6' />
+            </a>
+            <a href='https://instagram.com' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-200'>
+              <FaInstagram className='w-6 h-6' />
+            </a>
+          </div>
         </motion.div>
+        {/* Kolom kanan — bio + services */}
+        <div className='flex flex-col gap-8'>
 
-        {/* Right: Content */}
-        <motion.div
-          className='flex flex-col'
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Title */}
-          <div className='mb-8'>
-            <h2 className='text-4xl md:text-5xl font-pixel text-mc-lava drop-shadow-[0_0_15px_rgba(255,102,0,0.4)] mb-4'>
-              About Me
-            </h2>
-            <p className='text-[#d3b58d] text-sm md:text-base'>
-              The developer behind the plugins
+          {/* Bio */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className='font-pixel text-mc-lava text-xl mb-3'>Haloo, Aku Azka</h3>
+            <p className='text-mc-gray text-sm leading-relaxed mb-4'>
+              Gw seorang <span className='text-mc-white font-bold'>Fullstack Developer</span> yang passionate bikin produk digital dari nol. Udah ship beberapa produk nyata — dari platform top-up game, productivity app, sampai sistem informasi sekolah. Stack utama gw <span className='text-mc-lava font-semibold'>Next.js</span>, <span className='text-mc-lava font-semibold'>Laravel</span>, <span className='text-mc-lava font-semibold'>Kotlin</span>, dan <span className='text-mc-lava font-semibold'>Supabase</span>.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Greeting */}
-          <h3 className='text-xl md:text-2xl font-pixel text-mc-lava mb-6 flex items-center gap-3'>
-            Hey, I'm Azka<span className='text-2xl'></span>
-          </h3>
+          {/* Divider tipis */}
+          <div className='h-px bg-mc-cobble' />
 
-          {/* Description */}
-          <div className='text-mc-gray/90 text-sm md:text-base leading-relaxed space-y-4 mb-10'>
-            <p>
-             Seorang Fullstack Developer yang passionate bikin produk web & mobile dari nol. Udah berpengalaman bikin platform top-up game AZKA TOP UP, productivity app Vorxa, dan aplikasi manajemen sekolah SIGIZI. Stack utama: Next.js, Laravel, Kotlin/Jetpack Compose, Supabase.
-            </p>
-            <p>
-              Gw udah kerja di beberapa server ternama seperti <span className='text-mc-lava font-bold'>RelxMC</span> dan <span className='text-mc-lava font-bold'>HitmanSMP</span>, dan udah bikin banyak plugin custom yang dipake oleh ribuan pemain. Selain plugin, gw juga develop website dan manage server infrastructure.
-            </p>
-          </div>
-
-          {/* Services Grid */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-            {SERVICES.map((service, idx) => (
-              <div 
-                key={idx}
-                className='flex items-center gap-4 bg-[#1f1005]/80 border border-[#2a1100] rounded-xl p-4 hover:border-mc-lava/50 hover:bg-[#2a1100]/80 transition-colors duration-300 cursor-pointer'
+          {/* Service cards — 2x2 grid */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
+            {SERVICES.map((s, i) => (
+              <motion.div
+                key={s.label}
+                custom={i}
+                variants={fadeUp}
+                initial='hidden'
+                whileInView='show'
+                viewport={{ once: true }}
+                className='group bg-mc-obsidian border border-mc-cobble hover:border-mc-lava transition-colors duration-200 p-4 flex items-start gap-3'
               >
-                <div className='p-2 bg-[#0d0500] rounded-lg border border-[#2a1100]'>
-                  {service.icon}
+                <span className='text-xl shrink-0'>{s.icon}</span>
+                <div>
+                  <p className='text-mc-white text-sm font-medium mb-0.5'>{s.label}</p>
+                  <p className='text-mc-gray text-xs leading-relaxed'>{s.desc}</p>
                 </div>
-                <span className='text-mc-white/90 text-sm font-medium'>
-                  {service.title}
-                </span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-        </motion.div>
-
+        </div>
       </div>
     </SectionWrapper>
   )
-}
+} 

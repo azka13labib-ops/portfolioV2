@@ -1,7 +1,50 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) => {
+  const [displayText, setDisplayText] = useState('')
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    let isDeleting = false;
+    let i = 0;
+
+    const loop = () => {
+      setDisplayText(text.substring(0, i));
+
+      let typingSpeed = isDeleting ? 50 : 150;
+
+      if (!isDeleting && i === text.length) {
+        typingSpeed = 2000; // Jeda saat teks selesai diketik
+        isDeleting = true;
+      } else if (isDeleting && i === 0) {
+        isDeleting = false;
+        typingSpeed = 500; // Jeda sebelum mulai ngetik lagi
+      }
+
+      if (isDeleting) {
+        i--;
+      } else {
+        i++;
+      }
+
+      timeoutId = setTimeout(loop, typingSpeed);
+    };
+
+    const startTimeout = setTimeout(() => {
+      loop();
+    }, delay);
+
+    return () => {
+      clearTimeout(startTimeout);
+      clearTimeout(timeoutId);
+    };
+  }, [text, delay]);
+
+  return <span>{displayText}</span>;
+};
 
 const VIDEOS = [
   '/assets/video/hero1.mp4',
@@ -37,14 +80,14 @@ export function HeroSection() {
       <div className='absolute inset-0 bg-mc-void/30 mix-blend-multiply' />
       
       {/* Smooth transition gradient to About section */}
-      <div className='absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d0500] to-transparent pointer-events-none' />
+      <div className='absolute bottom-0 left-0 right-0 h-48 sm:h-64 bg-gradient-to-t from-[#150500] via-[#150500]/50 to-transparent pointer-events-none z-10' />
 
       {/* Content */}
       <div className='relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center mt-16 w-full'>
         
         {/* Main Title */}
         <motion.h1
-          className='font-pixel text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none mb-6 tracking-[0.05em]'
+          className='font-pixel text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none mb-6 tracking-wider'
           style={{ textShadow: '0 6px 0 rgba(0,0,0,0.5)' }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +114,7 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          ...Server Developer<span className="animate-pulse">_</span>
+          <TypewriterText text="Fullstack Developer" delay={800} /><span className="animate-pulse">_</span>
         </motion.p>
 
         {/* Action Buttons */}
@@ -82,7 +125,7 @@ export function HeroSection() {
           transition={{ delay: 1 }}
         >
           {/* Primary Action Button */}
-          <a href="#projects" className="group relative flex items-center justify-center gap-3 px-8 py-4 font-pixel text-xs sm:text-sm text-mc-gold bg-gradient-to-b from-[#8f3600] to-[#5e2000] border-2 border-[#b34000] hover:brightness-110 transition-all shadow-[inset_0_2px_0_rgba(255,255,255,0.1),_0_4px_0_#3d1300]">
+          <a href="#projects" className="group relative flex items-center justify-center gap-3 px-8 py-4 font-pixel text-xs sm:text-sm text-mc-gold bg-gradient-to-b from-[#8f3600] to-[#5e2000] border-2 border-[#b34000] hover:brightness-110 transition-all shadow-[inset_0_2px_0_rgba(255,255,255,0.1),0_4px_0_#3d1300]">
             <svg className="w-5 h-5 text-mc-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" /></svg>
             VIEW PROJECTS
           </a>

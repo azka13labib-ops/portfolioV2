@@ -11,7 +11,7 @@ const stats = statsData as Stat[]
 
 export function StatsSection() {
   return (
-    <SectionWrapper id='stats' className='bg-mc-obsidian/30'>
+    <SectionWrapper id='stats'>
       <SectionTitle title='Scoreboard' subtitle='My achievements in numbers' />
       <div className='grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto'>
         {stats.map((stat, i) => (

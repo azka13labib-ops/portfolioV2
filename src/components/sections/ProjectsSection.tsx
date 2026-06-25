@@ -20,7 +20,9 @@ export function ProjectsSection() {
     : projects.filter((p) => p.category === active)
 
   return (
-    <SectionWrapper id='projects' className='bg-mc-obsidian/30'>
+    <SectionWrapper id='projects' className='relative'>
+      {/* Warm radial glow for deep cave ambient light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
       <SectionTitle title='Projects' subtitle='Things I have built' />
 
       {/* Filter tabs */}
