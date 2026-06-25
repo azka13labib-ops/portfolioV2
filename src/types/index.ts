@@ -7,6 +7,8 @@ export interface Project {
   url?: string
   github?: string
   image?: string
+  images?: string[]              // For projects with multiple screenshots (e.g. 3-screen mobile showcase)
+  mockup?: 'mobile' | 'desktop'  // 'mobile' shows phone frame overlay
 }
 
 export interface Skill {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { cn } from '@/lib/utils'
 
 interface HotbarProps {
@@ -27,7 +28,7 @@ export function Hotbar({ items, activeIndex, onChange }: HotbarProps) {
                 'relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-[#8b8b8b] transition-all duration-75',
                 isActive
                   ? 'border-4 border-white shadow-[inset_0_0_10px_rgba(255,255,255,0.5)] z-10 scale-110'
-                  : 'border-4 border-t-black/60 border-l-black/60 border-b-white/20 border-r-white/20 hover:bg-[#a0a0a0] opacity-80 hover:opacity-100',
+                  : 'border-4 border-t-black/60 border-l-black/60 border-b-white/20 border-r-white/20 hover:bg-mc-gray opacity-80 hover:opacity-100',
                 !item && 'cursor-default opacity-40 hover:opacity-40 hover:bg-[#8b8b8b]'
               )}
               title={item ? `${i + 1} - ${item.title}` : `Slot ${i + 1}`}

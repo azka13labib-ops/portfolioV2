@@ -76,11 +76,11 @@ export function HeroSection() {
 
       {/* Overlay gradient so text is readable while keeping video visible */}
       <div className='absolute inset-0 backdrop-blur-[3px]' />
-      <div className='absolute inset-0 bg-gradient-to-b from-mc-void/60 via-transparent to-mc-void/50' />
+      <div className='absolute inset-0 bg-linear-to-b from-mc-void/60 via-transparent to-mc-void/50' />
       <div className='absolute inset-0 bg-mc-void/30 mix-blend-multiply' />
       
       {/* Smooth transition gradient to About section */}
-      <div className='absolute bottom-0 left-0 right-0 h-48 sm:h-64 bg-gradient-to-t from-[#150500] via-[#150500]/50 to-transparent pointer-events-none z-10' />
+      <div className='absolute bottom-0 left-0 right-0 h-48 sm:h-64 bg-linear-to-t from-[#150500] via-[#150500]/50 to-transparent pointer-events-none z-10' />
 
       {/* Content */}
       <div className='relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center mt-16 w-full'>
@@ -125,7 +125,7 @@ export function HeroSection() {
           transition={{ delay: 1 }}
         >
           {/* Primary Action Button */}
-          <a href="#projects" className="group relative flex items-center justify-center gap-3 px-8 py-4 font-pixel text-xs sm:text-sm text-mc-gold bg-gradient-to-b from-[#8f3600] to-[#5e2000] border-2 border-[#b34000] hover:brightness-110 transition-all shadow-[inset_0_2px_0_rgba(255,255,255,0.1),0_4px_0_#3d1300]">
+          <a href="#projects" className="group relative flex items-center justify-center gap-3 px-8 py-4 font-pixel text-xs sm:text-sm text-mc-gold bg-linear-to-b from-[#8f3600] to-[#5e2000] border-2 border-[#b34000] hover:brightness-110 transition-all shadow-[inset_0_2px_0_rgba(255,255,255,0.1),0_4px_0_#3d1300]">
             <svg className="w-5 h-5 text-mc-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" /></svg>
             VIEW PROJECTS
           </a>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { Project } from '@/types'
@@ -10,28 +11,68 @@ interface ProjectCardProps {
   className?: string
 }
 
+/** Renders a premium Dribbble-style 3-screen mobile showcase */
+function MobileShowcase({ src, images, alt, className }: { src: string; images?: string[]; alt: string; className?: string }) {
+  // Use provided images array, or fallback to using the same src 3 times
+  const leftImg = images && images.length >= 1 ? images[0] : src
+  const centerImg = images && images.length >= 2 ? images[1] : src
+  const rightImg = images && images.length >= 3 ? images[2] : src
+
+  return (
+    <div className={cn('relative flex items-center justify-center w-full h-full bg-[#0a0a0a] overflow-hidden group perspective-1000', className)}>
+      {/* Background glow (uses center image) */}
+      <div className='absolute inset-0 opacity-20'>
+        <img src={centerImg} alt="" className='w-full h-full object-cover blur-3xl scale-150' />
+      </div>
+
+      <div className='relative z-10 flex items-center justify-center gap-4 sm:gap-6 w-full h-full px-4'>
+        {/* Left Screen (offset up, slightly faded/smaller) */}
+        <div className='hidden sm:block w-[30%] h-[120%] shrink-0 rounded-2xl overflow-hidden opacity-40 shadow-xl transform -translate-y-12 transition-transform duration-700 group-hover:-translate-y-16'>
+          <img src={leftImg} alt="" className='w-full h-full object-cover object-top' />
+        </div>
+
+        {/* Center Screen (main focus, scaled up) */}
+        <div className='w-[45%] sm:w-[35%] h-[90%] shrink-0 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/5 transform transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-105 z-20'>
+          <img src={centerImg} alt={alt} className='w-full h-auto object-cover object-top' />
+        </div>
+
+        {/* Right Screen (offset down, slightly faded/smaller) */}
+        <div className='hidden sm:block w-[30%] h-[120%] shrink-0 rounded-2xl overflow-hidden opacity-40 shadow-xl transform translate-y-12 transition-transform duration-700 group-hover:translate-y-16'>
+          <img src={rightImg} alt="" className='w-full h-full object-cover object-top' />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function ProjectCard({ project, featured = false, className }: ProjectCardProps) {
+  const isMobileMockup = project.mockup === 'mobile'
+
   if (featured) {
     return (
       <div className={cn(
         'group relative flex flex-col md:flex-row overflow-hidden bg-mc-obsidian border border-white/5 hover:border-mc-lava/50 transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,102,0,0.12)]',
         className
       )}>
-        {/* Left: Big image */}
-        <div className='relative md:w-1/2 aspect-video md:aspect-auto overflow-hidden bg-[#111] flex-shrink-0'>
+        {/* Left: image area */}
+        <div className='relative md:w-1/2 aspect-video md:aspect-auto overflow-hidden bg-[#111] shrink-0'>
           {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              className='w-full h-full object-cover brightness-80 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700'
-            />
+            isMobileMockup ? (
+              <MobileShowcase src={project.image} images={project.images} alt={project.title} />
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className='w-full h-full object-cover object-top brightness-80 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700'
+              />
+            )
           ) : (
             <div className='w-full h-full flex items-center justify-center bg-[#111]'>
               <div className='font-pixel text-mc-gray/30 text-xs'>no image</div>
             </div>
           )}
           {/* Dark vignette overlay */}
-          <div className='absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-mc-obsidian md:block hidden' />
+          <div className='absolute inset-0 bg-linear-to-r from-transparent via-transparent to-mc-obsidian md:block hidden' />
         </div>
 
         {/* Right: Content */}
@@ -91,14 +132,18 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
       'group relative flex flex-col h-full overflow-hidden bg-mc-obsidian border border-white/5 hover:border-mc-lava/40 transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.4),0_0_24px_rgba(255,102,0,0.08)]',
       className
     )}>
-      {/* Thumbnail */}
+      {/* Image Container */}
       <div className='relative w-full aspect-video overflow-hidden bg-[#0d0d0d]'>
         {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className='w-full h-full object-cover brightness-75 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500'
-          />
+          isMobileMockup ? (
+            <MobileShowcase src={project.image} images={project.images} alt={project.title} />
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title}
+              className='w-full h-full object-cover object-top brightness-80 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700'
+            />
+          )
         ) : (
           <div className='w-full h-full flex items-center justify-center'>
             {/* Pixel grid placeholder */}
@@ -111,10 +156,12 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
         )}
 
         {/* Bottom gradient for readability */}
-        <div className='absolute inset-0 bg-gradient-to-t from-mc-obsidian via-mc-obsidian/20 to-transparent' />
+        {!isMobileMockup && (
+          <div className='absolute inset-0 bg-linear-to-t from-mc-obsidian via-mc-obsidian/20 to-transparent' />
+        )}
 
         {/* Hover-reveal link buttons */}
-        <div className='absolute top-3 right-3 flex gap-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>
+        <div className='absolute top-3 right-3 flex gap-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20'>
           {project.github && (
             <a href={project.github} target='_blank' rel='noopener noreferrer' onClick={e => e.stopPropagation()}
               className='w-8 h-8 flex items-center justify-center bg-black/80 border border-white/10 text-mc-gray hover:text-white hover:border-mc-lava transition-colors backdrop-blur-sm'>
