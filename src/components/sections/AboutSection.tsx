@@ -48,6 +48,7 @@ export function AboutSection() {
                 src='/assets/images/image.png'
                 alt='Azka Labib'
                 fill
+                sizes='(max-width: 768px) 224px, 256px'
                 className='object-cover object-[65%_center] brightness-110 contrast-105'
               />
             </div>
@@ -60,13 +61,13 @@ export function AboutSection() {
 
           {/* Social Links */}
           <div className='flex items-center gap-5 mt-4'>
-            <a href='https://github.com/azka13labib-ops' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-white hover:-translate-y-1 transition-all duration-200'>
+            <a href='https://github.com/azka13labib' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-white hover:-translate-y-1 transition-all duration-200'>
               <FaGithub className='w-6 h-6' />
             </a>
             <a href='https://discord.com/users/azkaaa6169' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#5865F2] hover:-translate-y-1 transition-all duration-200'>
               <FaDiscord className='w-6 h-6' />
             </a>
-            <a href='https://instagram.com/askagantengbgttt' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-200'>
+            <a href='https://instagram.com/askagantengbngttt' target='_blank' rel='noreferrer' className='p-2 text-mc-gray hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-200'>
               <FaInstagram className='w-6 h-6' />
             </a>
           </div>

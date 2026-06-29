@@ -54,8 +54,10 @@ export function SkillsSection() {
   const expLabel = `${expYears === 1 ? 'YEAR' : 'YEARS'} EXPERIENCE`
 
   return (
-    <SectionWrapper id='skills' className='bg-mc-obsidian'>
-      <div className='grid lg:grid-cols-[1fr_2fr] gap-12 max-w-[1200px] mx-auto px-6 md:px-12 py-24'>
+    <SectionWrapper id='skills' className='bg-linear-to-b from-transparent via-mc-obsidian/80 to-transparent relative'>
+      {/* Optional inner gradient for smoother blending */}
+      <div className='absolute inset-0 bg-linear-to-b from-[#000000] via-mc-obsidian to-[#000000] -z-10' />
+      <div className='relative grid lg:grid-cols-[1fr_2fr] gap-12 max-w-[1200px] mx-auto px-6 md:px-12 py-24'>
         
         {/* Left column */}
         <div className=' lg:top-32 lg:self-start flex flex-col'>

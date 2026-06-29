@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Navbar } from '@/components/layout/Navbar'
-import { Footer } from '@/components/layout/Footer'
 import { LoadingScreen } from '@/components/layout/LoadingScreen'
 import './globals.css'
 
@@ -99,7 +98,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LoadingScreen />
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   )

@@ -7,10 +7,10 @@ const TOTAL_SEGMENTS = 24
 const TITLE = 'LOADING TERRAIN'
 const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
   id: i,
-  size: Math.random() * 5 + 2,
-  x: Math.random() * 100,
-  delay: Math.random() * 3,
-  dur: Math.random() * 4 + 3,
+  size: Math.round(Math.abs(Math.sin(i * 12.9898)) * 5 + 2),
+  x: Math.round(Math.abs(Math.cos(i * 78.233)) * 100),
+  delay: Math.round(Math.abs(Math.sin(i * 45.123)) * 3),
+  dur: Math.round(Math.abs(Math.cos(i * 93.211)) * 4 + 3),
 }))
 
 export function LoadingScreen() {
