@@ -37,7 +37,11 @@ export function ContactSection() {
   }
 
   return (
-    <SectionWrapper id='contact' className='pt-8 pb-24 relative'>
+    <SectionWrapper id='contact' className='pt-8 pb-24 relative border-t border-white/5 bg-[#030303]'>
+      {/* Subtle top glow to separate section smoothly */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-2xl h-px bg-linear-to-r from-transparent via-mc-lava/30 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-32 bg-mc-lava/5 blur-3xl rounded-full pointer-events-none" />
+      
       <SectionTitle title='Contact' subtitle="Get in touch" />
 
       {/* Simple Toast */}
