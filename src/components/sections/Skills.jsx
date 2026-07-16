@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SiNextdotjs, SiReact, SiTailwindcss, SiHtml5, SiCss, SiGreensock, SiJavascript, SiNodedotjs, SiLaravel, SiPostgresql, SiFigma, SiFramer } from "react-icons/si";
+import { SiNextdotjs, SiReact, SiTailwindcss, SiHtml5, SiGreensock, SiJavascript, SiNodedotjs, SiLaravel, SiPostgresql, SiFigma, SiFramer, SiAxios } from "react-icons/si";
+import { FaMobileAlt, FaCubes } from "react-icons/fa";
 
 export default function Skills() {
   const sectionRef = useRef(null);
@@ -35,16 +36,16 @@ export default function Skills() {
   const skillItems = [
     // --- FRONT END ---
     {
-      name: "Next.js",
-      category: "Front End",
-      desc: "React framework for production-grade static & server-rendered apps.",
-      icon: <SiNextdotjs className="w-10 h-10" />
-    },
-    {
       name: "React",
       category: "Front End",
       desc: "Component-based declarative library for building user interfaces.",
       icon: <SiReact className="w-10 h-10" />
+    },
+    {
+      name: "Next.js",
+      category: "Front End",
+      desc: "React framework for production-grade static & server-rendered apps.",
+      icon: <SiNextdotjs className="w-10 h-10" />
     },
     {
       name: "Tailwind CSS",
@@ -59,12 +60,6 @@ export default function Skills() {
       icon: <SiHtml5 className="w-10 h-10" />
     },
     {
-      name: "CSS",
-      category: "Front End",
-      desc: "Cascading style sheets for web presentation.",
-      icon: <SiCss className="w-10 h-10" />
-    },
-    {
       name: "GSAP Animation",
       category: "Front End",
       desc: "Robust JavaScript toolset for high-performance animations.",
@@ -77,14 +72,28 @@ export default function Skills() {
       icon: <SiJavascript className="w-10 h-10" />
     },
     {
-      name: "Zustand",
+      name: "Axios",
       category: "Front End",
-      desc: "A small, fast and scalable bearbones state-management solution.",
-      icon: (
-        <svg className="w-10 h-10 fill-current" viewBox="0 0 24 24">
-          <path d="M16 3c-1.5 0-2.5 1-2.5 2v1c-1 0-2 0-3 0V5c0-1-1-2-2.5-2C6.5 3 5 4.5 5 6c0 1 .5 2 1 2.5V11c0 3.5 3 6 7 6s7-2.5 7-6V8.5c.5-.5 1-1.5 1-2.5 0-1.5-1.5-3-3-3zm-9.5 2c.8 0 1.5.7 1.5 1.5S7.3 8 6.5 8 5 7.3 5 6.5 5.7 5 6.5 5zm11 0c.8 0 1.5.7 1.5 1.5S18.3 8 17.5 8 16 7.3 16 6.5 16.7 5 17.5 5zM9 13c0 .5-.4 1-1 1s-1-.4-1-1 .4-1 1-1 1 .4 1 1zm8 0c0 .5-.4 1-1 1s-1-.4-1-1 .4-1 1-1 1 .4 1 1zM12 15c-.8 0-1.5.7-1.5 1.5S11.2 18 12 18s1.5-.7 1.5-1.5S12.8 15 12 15z"/>
-        </svg>
-      ),
+      desc: "Promise-based HTTP client for the browser and Node.js.",
+      icon: <SiAxios className="w-10 h-10" />
+    },
+    {
+      name: "Responsive Design",
+      category: "Front End",
+      desc: "Creating flexible layouts that adapt to any screen size.",
+      icon: <FaMobileAlt className="w-10 h-10" />
+    },
+    {
+      name: "Joko UI",
+      category: "Front End",
+      desc: "Modern component library for elegant interfaces.",
+      icon: <FaCubes className="w-10 h-10" />
+    },
+    {
+      name: "Framer",
+      category: "Front End",
+      desc: "Interactive design and animation for React.",
+      icon: <SiFramer className="w-10 h-10" />
     },
     // --- BACKEND ---
     {
