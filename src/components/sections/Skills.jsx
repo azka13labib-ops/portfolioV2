@@ -64,12 +64,8 @@ export default function Skills() {
       category: "Front End",
       desc: "Robust JavaScript toolset for high-performance animations.",
       icon: (
-        <svg viewBox="0 0 100 100" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="50" fill="#1C1C1C"/>
-          <circle cx="34" cy="34" r="18" fill="#0AE448"/>
-          <circle cx="66" cy="34" r="18" fill="#8CF14E"/>
-          <circle cx="34" cy="66" r="18" fill="#0AE448"/>
-          <circle cx="66" cy="66" r="18" fill="#8CF14E"/>
+        <svg viewBox="0 0 100 100" className="w-10 h-10 fill-current" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M50 100A50 50 0 1 0 50 0A50 50 0 0 0 50 100ZM34 16A18 18 0 1 1 34 52A18 18 0 0 1 34 16ZM66 16A18 18 0 1 1 66 52A18 18 0 0 1 66 16ZM34 48A18 18 0 1 1 34 84A18 18 0 0 1 34 48ZM66 48A18 18 0 1 1 66 84A18 18 0 0 1 66 48Z" />
         </svg>
       )
     },
