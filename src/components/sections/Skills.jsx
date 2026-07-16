@@ -68,8 +68,8 @@ export default function Skills() {
       category: "Front End",
       desc: "Semantic markup for web structure.",
       icon: (
-        <svg className="w-10 h-10 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6M12 2l-2 20" />
+        <svg className="w-10 h-10 fill-current" viewBox="0 0 384 512">
+          <path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.63 127.9H124.28l5.38 61.1h172.93l-15.42 173.3-89.28 27.1-89.26-27.1-4.08-46.7H66.4l7.15 82.2 118.04 35.8 118.03-35.8 22.8-255.4z" />
         </svg>
       ),
     },
@@ -78,8 +78,8 @@ export default function Skills() {
       category: "Front End",
       desc: "Cascading style sheets for web presentation.",
       icon: (
-        <svg className="w-10 h-10 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        <svg className="w-10 h-10 fill-current" viewBox="0 0 384 512">
+          <path d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-41.6-167.3-16.3-9.3-107.2h243.4l1.8-19.9z" />
         </svg>
       ),
     },
@@ -98,9 +98,8 @@ export default function Skills() {
       category: "Front End",
       desc: "Modern vanilla JavaScript features and syntax.",
       icon: (
-        <svg className="w-10 h-10 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-          <path d="M8 17v-4a2 2 0 012-2h0a2 2 0 012 2v4M15 17h-2M15 13h-2" />
+        <svg className="w-10 h-10 fill-current" viewBox="0 0 448 512">
+          <path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 36.8 0 59.2 17.1 71.5 39.7l-33.4 20.1c-8.4-13.5-19.8-21.6-37.6-21.6-16.5 0-26.2 7.8-26.2 19.5 0 12.3 12 17.4 28.6 24.6l12.9 5.4c34 14.7 51.4 31.6 51.4 65.8 0 39.7-27.1 56.1-64.8 56.1z" />
         </svg>
       ),
     },
@@ -109,8 +108,8 @@ export default function Skills() {
       category: "Front End",
       desc: "A small, fast and scalable bearbones state-management solution.",
       icon: (
-        <svg className="w-10 h-10 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        <svg className="w-10 h-10 fill-current" viewBox="0 0 24 24">
+          <path d="M16 3c-1.5 0-2.5 1-2.5 2v1c-1 0-2 0-3 0V5c0-1-1-2-2.5-2C6.5 3 5 4.5 5 6c0 1 .5 2 1 2.5V11c0 3.5 3 6 7 6s7-2.5 7-6V8.5c.5-.5 1-1.5 1-2.5 0-1.5-1.5-3-3-3zm-9.5 2c.8 0 1.5.7 1.5 1.5S7.3 8 6.5 8 5 7.3 5 6.5 5.7 5 6.5 5zm11 0c.8 0 1.5.7 1.5 1.5S18.3 8 17.5 8 16 7.3 16 6.5 16.7 5 17.5 5zM9 13c0 .5-.4 1-1 1s-1-.4-1-1 .4-1 1-1 1 .4 1 1zm8 0c0 .5-.4 1-1 1s-1-.4-1-1 .4-1 1-1 1 .4 1 1zM12 15c-.8 0-1.5.7-1.5 1.5S11.2 18 12 18s1.5-.7 1.5-1.5S12.8 15 12 15z"/>
         </svg>
       ),
     },
