@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SiNextdotjs, SiReact, SiTailwindcss, SiHtml5, SiGreensock, SiJavascript, SiNodedotjs, SiLaravel, SiPostgresql, SiFigma, SiFramer, SiAxios } from "react-icons/si";
+import { SiNextdotjs, SiReact, SiTailwindcss, SiHtml5, SiJavascript, SiNodedotjs, SiLaravel, SiPostgresql, SiFigma, SiFramer, SiAxios } from "react-icons/si";
 import { FaMobileAlt, FaCubes } from "react-icons/fa";
 
 export default function Skills() {
@@ -63,7 +63,15 @@ export default function Skills() {
       name: "GSAP Animation",
       category: "Front End",
       desc: "Robust JavaScript toolset for high-performance animations.",
-      icon: <SiGreensock className="w-10 h-10" />
+      icon: (
+        <svg viewBox="0 0 100 100" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#1C1C1C"/>
+          <circle cx="34" cy="34" r="18" fill="#0AE448"/>
+          <circle cx="66" cy="34" r="18" fill="#8CF14E"/>
+          <circle cx="34" cy="66" r="18" fill="#0AE448"/>
+          <circle cx="66" cy="66" r="18" fill="#8CF14E"/>
+        </svg>
+      )
     },
     {
       name: "JavaScript ES6",
