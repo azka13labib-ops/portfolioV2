@@ -10,6 +10,7 @@ import Contact from "@/components/sections/Contact";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Loader from "@/components/ui/Loader";
 
 export default function Home() {
   const scrollContainerRef = useRef(null);
@@ -88,8 +89,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative bg-black w-full min-h-screen">
+    <main className="relative bg-black w-full min-h-screen overflow-x-hidden">
       {/* Navigation */}
+      <Loader />
       <Navbar />
 
 

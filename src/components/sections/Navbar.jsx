@@ -94,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 w-screen h-screen bg-black/15 z-40 pointer-events-auto cursor-pointer"
+            className="fixed inset-0 w-full h-full bg-black/15 z-40 pointer-events-auto cursor-pointer"
           />
         )}
       </AnimatePresence>

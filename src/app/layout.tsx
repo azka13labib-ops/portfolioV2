@@ -32,7 +32,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${orbitron.variable} ${caveat.variable} ${spaceMono.variable} h-full antialiased`}
+      className={`${orbitron.variable} ${caveat.variable} ${spaceMono.variable} h-full antialiased overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col bg-black text-white selection:bg-[#FB64B6] selection:text-black overflow-x-hidden">
         {children}
