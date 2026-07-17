@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPink, setIsPink] = useState(false);
 
   const [clickBlobs, setClickBlobs] = useState([]);
   const clickBlobNextId = useRef(0);
@@ -89,6 +90,41 @@ export default function Navbar() {
   const hamburgerStyle = { borderColor: "#ffffff" };
   const lineStyle = { backgroundColor: "#ffffff" };
 
+  // Detect if navbar is over a pink background
+  useEffect(() => {
+    const handleScroll = () => {
+      let overPink = false;
+      const skillsEl = document.getElementById("skills");
+      const projEl = document.getElementById("projects");
+      
+      if (skillsEl) {
+        const rect = skillsEl.getBoundingClientRect();
+        if (rect.top <= 80 && rect.bottom >= 20) {
+          overPink = true;
+        }
+      }
+      
+      if (projEl) {
+        const rect = projEl.getBoundingClientRect();
+        // The pink wave at the top of projects extends down ~100-150px
+        if (rect.top <= 80 && rect.top >= -70) {
+          overPink = true;
+        }
+      }
+      
+      setIsPink(overPink);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Check initially after a short delay to allow DOM to render
+    const timer = setTimeout(handleScroll, 500);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <>
       {/* Click-to-Close Backdrop Overlay when Menu is Open */}
@@ -103,7 +139,7 @@ export default function Navbar() {
           />
         )}
       </AnimatePresence>
-      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none mix-blend-difference">
+      <header className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none transition-colors ${isPink ? "" : "mix-blend-difference"}`}>
         {/* Logo */}
         <a href="#" className="text-white font-display text-4xl font-bold tracking-widest hover:opacity-80 transition-opacity pointer-events-auto">
           Azka
