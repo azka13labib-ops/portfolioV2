@@ -269,7 +269,7 @@ export default function Hero() {
             <div className="relative w-full h-full border-8 border-[#FB64B6] bg-[#efefef] shadow-xl overflow-hidden">
               {!profileError ? (
                 <Image
-                  src="/img/azka.png"
+                  src="/img/image.png"
                   alt="Profile photo"
                   fill
                   priority

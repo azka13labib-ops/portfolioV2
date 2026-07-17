@@ -99,12 +99,10 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 w-screen h-screen bg-black/15 backdrop-blur-[2px] z-40 pointer-events-auto cursor-pointer"
           />
         )}
       </AnimatePresence>
-
-      <header className="absolute top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none">
+      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none mix-blend-difference">
         {/* Logo */}
         <a href="#" className="text-white font-display text-4xl font-bold tracking-widest hover:opacity-80 transition-opacity pointer-events-auto">
           Azka
