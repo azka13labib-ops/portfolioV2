@@ -104,7 +104,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none">
+      <header className="absolute top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none">
         {/* Logo */}
         <a href="#" className="text-[#FB64B6] font-display text-4xl font-bold tracking-widest hover:opacity-80 transition-opacity pointer-events-auto">
           Azka
@@ -160,7 +160,7 @@ export default function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed top-24 right-4 md:right-16 lg:right-24 w-[280px] h-[310px] z-45 flex items-center justify-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)]"
+            className="absolute top-24 right-4 md:right-16 lg:right-24 w-[280px] h-[310px] z-45 flex items-center justify-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)]"
           >
             {/* Morphing Liquid SVG Background */}
             <svg
