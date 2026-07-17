@@ -126,7 +126,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
+    <div className="fixed inset-0 pointer-events-none z-100">
       {/* Click-to-Close Backdrop Overlay when Menu is Open */}
       <AnimatePresence>
         {isOpen && (
@@ -139,7 +139,7 @@ export default function Navbar() {
           />
         )}
       </AnimatePresence>
-      <header className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none transition-colors ${isPink ? "" : "mix-blend-difference"}`}>
+      <header className={`absolute top-0 left-0 w-full flex items-center justify-between py-6 px-8 md:px-16 lg:px-24 bg-transparent pointer-events-none transition-colors ${isPink ? "" : "mix-blend-difference"}`}>
         {/* Logo */}
         <a href="#" className="text-white font-display text-4xl font-bold tracking-widest hover:opacity-80 transition-opacity pointer-events-auto">
           Azka
@@ -195,7 +195,7 @@ export default function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed top-24 right-4 md:right-16 lg:right-24 w-[280px] h-[310px] z-[55] flex items-center justify-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] pointer-events-auto"
+            className="absolute top-24 right-4 md:right-16 lg:right-24 w-[280px] h-[310px] flex items-center justify-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] pointer-events-auto"
           >
             {/* Morphing Liquid SVG Background */}
             <svg
@@ -254,6 +254,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
