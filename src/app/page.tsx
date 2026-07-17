@@ -40,24 +40,6 @@ export default function Home() {
         }
       );
 
-      // 1b. Animate hamburger border and line colors from black to white synchronously
-      tl.to(
-        ".nav-hamburger",
-        {
-          borderColor: "#ffffff",
-          ease: "none",
-        },
-        0
-      );
-      tl.to(
-        ".nav-hamburger-line",
-        {
-          backgroundColor: "#ffffff",
-          ease: "none",
-        },
-        0
-      );
-
       // 2. Synchronously scrub-reveal About Me words as the page slides up
       tl.to(
         ".reveal-word",
@@ -73,6 +55,18 @@ export default function Home() {
         },
         "<+=0.15" // starts shortly after transition begins
       );
+
+      // 3. Remove mix-blend-difference from Navbar when over the pink Skills section
+      // This ensures the logo and hamburger stay White over Pink, instead of turning Green
+      ScrollTrigger.create({
+        trigger: "#skills",
+        start: "top 80px", // When top of skills reaches near the navbar
+        end: "bottom 80px", // When bottom of skills passes the navbar
+        onEnter: () => document.querySelector("header")?.classList.remove("mix-blend-difference"),
+        onLeave: () => document.querySelector("header")?.classList.add("mix-blend-difference"),
+        onEnterBack: () => document.querySelector("header")?.classList.remove("mix-blend-difference"),
+        onLeaveBack: () => document.querySelector("header")?.classList.add("mix-blend-difference"),
+      });
 
     });
 
