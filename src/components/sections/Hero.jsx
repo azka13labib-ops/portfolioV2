@@ -368,19 +368,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mobile Only: Job Title & Download CV (Clean layout for mobile) */}
-        <div className="absolute top-[80%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 md:hidden w-[90%] pointer-events-auto">
-          <div className="font-orbitron uppercase text-black font-black text-xl text-center scale-y-125">
-            Fullstack Developer
-          </div>
-          <a
-            href="/pdf/CV 2026.pdf"
-            download
-            className="text-xs bg-[#FB64B6] text-white font-bold px-6 py-2.5 rounded-full uppercase tracking-widest shadow-[0_0_15px_rgba(251,100,182,0.4)] active:scale-95 transition-transform"
-          >
-            Download CV
-          </a>
-        </div>
+
 
         {/* Absolute Bottom Left: Welcome Tagline */}
         <div className="absolute bottom-[10%] left-[4%] z-20 w-[300px] lg:w-[420px] 2xl:w-[450px] text-black hidden md:block hero-bottom-item">
