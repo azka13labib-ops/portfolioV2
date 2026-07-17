@@ -130,7 +130,7 @@ export default function Projects() {
           >
             {/* Background Image with Overlay */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-30 group-hover:opacity-10"
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 md:group-hover:scale-110 opacity-10 md:opacity-30 md:group-hover:opacity-10"
               style={{ backgroundImage: `url(${project.image})` }}
             ></div>
             
@@ -142,7 +142,7 @@ export default function Projects() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+              <div className="flex flex-wrap gap-2 mb-4 translate-y-0 opacity-100 md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-100">
                 {project.tech.map((t, i) => (
                   <span key={i} className="px-3 py-1 text-[10px] md:text-xs font-mono font-bold bg-[#FB64B6] text-black rounded-full uppercase tracking-wider">
                     {t}
@@ -151,7 +151,7 @@ export default function Projects() {
               </div>
 
               {/* Title & Desc */}
-              <h3 className="font-orbitron font-black text-3xl md:text-5xl mb-4 group-hover:text-[#FB64B6] transition-colors duration-300">
+              <h3 className="font-orbitron font-black text-3xl md:text-5xl mb-4 text-[#FB64B6] md:text-white md:group-hover:text-[#FB64B6] transition-colors duration-300">
                 {project.title}
               </h3>
               <p className="font-mono text-neutral-300 text-xs md:text-sm mb-8 max-w-md line-clamp-3">
@@ -159,7 +159,7 @@ export default function Projects() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+              <div className="flex items-center gap-4 translate-y-0 opacity-100 md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-200">
                 <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-[#FB64B6] text-black font-bold font-orbitron text-xs md:text-sm hover:bg-white transition-colors rounded-full shadow-[0_0_15px_rgba(251,100,182,0.4)]">
                   <FaExternalLinkAlt /> Live Demo
                 </a>
@@ -169,8 +169,8 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 rounded-3xl ring-2 ring-[#FB64B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            {/* Hover Glow Effect (Desktop Only) */}
+            <div className="hidden md:block absolute inset-0 rounded-3xl ring-2 ring-[#FB64B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </div>
         ))}
 
