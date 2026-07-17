@@ -269,11 +269,11 @@ export default function Hero() {
             <div className="relative w-full h-full border-8 border-[#FB64B6] bg-[#efefef] shadow-xl overflow-hidden">
               {!profileError ? (
                 <Image
-                  src="/img/my.jpg"
+                  src="/img/azka.png"
                   alt="Profile photo"
                   fill
                   priority
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="object-cover grayscale"
                   onError={() => setProfileError(true)}
                 />
               ) : (
